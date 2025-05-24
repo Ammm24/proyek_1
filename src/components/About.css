@@ -58,6 +58,8 @@
 
 .about-image-column {
   width: 100%; /* Lebar penuh untuk mobile */
+  display: flex; /* Center the entire column content */
+  justify-content: center;
 }
 
 .skills-carousel {
@@ -65,6 +67,16 @@
   padding: 0 10px;
   margin-bottom: 20px;
   width: 100%;
+  max-width: 300px; /* Optional: limit the width of the carousel on mobile */
+}
+
+.skills-carousel .slick-slide {
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex !important; /* Ensure flexbox is used */
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically (if needed) */
 }
 
 .skills-carousel .slick-slide img {
@@ -133,52 +145,15 @@
 
   .about-image-column {
     width: 40%;
-    text-align: center;
+    text-align: center; /* Center the carousel container */
+    display: flex;
+    justify-content: center;
   }
 
   .skills-carousel {
     margin-top: 0;
     padding: 0;
     margin-bottom: 0;
-  }
-
-  .skills-carousel .slick-slide img {
-    max-width: 150px;
-    max-height: 150px;
-  }
-
-  .slick-prev {
-    left: -35px;
-  }
-
-  .slick-next {
-    right: -35px;
-  }
-
-  .slick-dots {
-    bottom: -40px;
-  }
-}
-
-/* Untuk layar desktop yang lebih besar */
-@media (min-width: 1200px) {
-  .about-section {
-    padding: 60px;
-  }
-
-  .about-section h2 {
-    font-size: 2em;
-    margin-bottom: 40px;
-  }
-
-  .about-section p,
-  .about-section .about-paragraph {
-    font-size: 1.1em;
-    line-height: 1.8;
-  }
-
-  .skills-carousel .slick-slide img {
-    max-width: 180px;
-    max-height: 180px;
+    width: 80%;
   }
 }
