@@ -1,0 +1,183 @@
+/* src/components/About.css */
+
+.about-section {
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: var(--section-bg);
+}
+
+.about-section h2 {
+  color: var(--header-text);
+  font-size: 1.8em;
+  margin-bottom: 30px;
+}
+
+.about-section p,
+.about-section .about-paragraph {
+  color: var(--header-text); /* Teks di about section akan putih/terang */
+}
+
+/* Container untuk teks dan gambar */
+.about-content {
+  display: flex;
+  flex-direction: column; /* Default: stack vertikal untuk mobile */
+  gap: 30px;
+  align-items: center;
+  text-align: left;
+}
+
+.about-text-column {
+  flex: 1;
+  max-width: 100%;
+}
+
+.about-paragraph {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1em;
+  line-height: 1.7;
+  color: var(--header-text); /* Pastikan paragraf juga terang */
+  text-align: justify;
+}
+
+/* Styling untuk animasi teks "HI Everyone!!" */
+.about-paragraph {
+  display: flex; /* Agar span bisa diatur bersebelahan */
+  flex-wrap: wrap; /* Jika ada baris baru setelah animasi */
+}
+
+.animated-letter {
+  opacity: 0;
+  transform: translateX(-20px); /* Mulai sedikit dari kiri */
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-image-column {
+  flex: 1;
+  max-width: 100%;
+}
+
+/* Styling untuk Carousel/Slider */
+.skills-carousel {
+  margin-top: 20px;
+  padding: 0 20px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.skills-carousel .slick-slide {
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills-carousel .slick-slide img {
+  max-width: 150px;
+  max-height: 150px;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 4px 8px var(--card-shadow);
+}
+
+/* Gaya untuk panah navigasi */
+.slick-prev:before, .slick-next:before {
+  color: var(--link-color);
+  font-size: 30px;
+}
+
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+/* Gaya untuk titik-titik navigasi (dots) */
+.slick-dots {
+  bottom: -40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+  color: var(--link-color);
+  opacity: 0.75;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--button-bg);
+  opacity: 1;
+}
+
+/* --- Media Queries --- */
+
+/* Untuk layar lebih besar dari 768px (tablet dan desktop) */
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .about-text-column {
+    flex: 1;
+    padding-right: 20px;
+    text-align: left;
+  }
+
+  .about-paragraph {
+    font-size: 1.1em;
+    margin-bottom: 0;
+  }
+
+  .about-image-column {
+    flex: 1;
+    max-width: 40%;
+    text-align: center;
+  }
+
+  .skills-carousel {
+    margin-top: 0;
+    padding: 0;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .skills-carousel .slick-slide img {
+    max-width: 180px;
+    max-height: 180px;
+  }
+
+  .slick-prev {
+    left: -40px;
+  }
+
+  .slick-next {
+    right: -40px;
+  }
+
+  .slick-dots {
+    bottom: -50px;
+  }
+}

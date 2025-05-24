@@ -1,0 +1,27 @@
+/* Footer Styling (mobile-first) */
+.footer {
+  background-color: var(--header-bg); /* Menggunakan variabel */
+  color: var(--header-text); /* Menggunakan variabel */
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+/* --- Media Queries --- */
+
+/* Untuk layar lebih besar dari 768px (tablet dan desktop) */
+@media (min-width: 768px) {
+  .footer {
+    padding: 20px 0;
+    margin-top: 40px;
+  }
+
+  .footer p {
+    font-size: 0.9em;
+  }
+}

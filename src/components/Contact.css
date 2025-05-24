@@ -1,0 +1,156 @@
+/* Contact Styling (mobile-first) */
+.contact-section {
+  text-align: center;
+  background-color: var(--section-bg); /* Background untuk section */
+}
+
+.contact-section h2 {
+  color: var(--header-text); /* Warna teks heading */
+  font-size: 1.8em;
+}
+
+.contact-section p {
+  color: var(--header-text); /* Warna teks paragraf */
+}
+
+.contact-form {
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--card-background); /* Background form */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px var(--card-shadow);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color); /* Warna label */
+  font-size: 0.95em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 0.9em;
+  box-sizing: border-box;
+  background-color: var(--input-bg); /* Background input */
+  color: var(--text-color); /* Warna teks input */
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--placeholder-color); /* Warna placeholder */
+}
+
+.submit-button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--link-color);
+}
+
+.social-links {
+  margin-top: 30px;
+}
+
+.social-links p {
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: var(--header-text); /* Warna teks di social links */
+}
+
+.social-links a {
+  display: block;
+  margin: 10px 0;
+  color: var(--header-text); /* Warna link sosial */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  font-size: 0.9em;
+}
+
+.social-links a:hover {
+  color: var(--link-color);
+}
+
+.social-links a.whatsapp-link {
+  background-color: #25D366; /* Warna hijau WhatsApp */
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  display: inline-block;
+}
+
+.social-links a.whatsapp-link:hover {
+  background-color: #1DA851;
+}
+
+/* --- Media Queries --- */
+
+/* Untuk layar lebih besar dari 768px (tablet dan desktop) */
+@media (min-width: 768px) {
+  .contact-section h2 {
+    font-size: 2em;
+  }
+
+  .contact-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+  }
+
+  .form-group label {
+    margin-bottom: 8px;
+    font-size: 1em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .submit-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+  }
+
+  .social-links {
+    margin-top: 40px;
+  }
+
+  .social-links p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+  }
+
+  .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 1em;
+  }
+  .social-links a.whatsapp-link {
+    padding: 10px 20px;
+    margin: 0 10px;
+  }
+}
