@@ -2,22 +2,45 @@
 .header {
   background-color: var(--header-bg);
   color: var(--header-text);
-  padding: 15px 0; /* Padding lebih kecil untuk mobile */
+  padding: 15px 0;
   box-shadow: 0 2px 5px var(--card-shadow);
 }
 
 .header .container {
   display: flex;
-  flex-direction: column; /* Stack vertically for mobile */
-  justify-content: center;
+  justify-content: space-between; /* Space out logo and hamburger */
   align-items: center;
-  text-align: center;
+  padding: 0 20px; /* Add some horizontal padding */
 }
 
 .header h1 {
-  margin: 0 0 10px 0; /* Margin bawah untuk mobile */
+  margin: 0;
   color: var(--header-text);
-  font-size: 1.8em; /* Ukuran font lebih kecil untuk mobile */
+  font-size: 1.5em; /* Slightly smaller for mobile */
+}
+
+/* Hamburger Button */
+.hamburger-button {
+  display: block; /* Show on mobile */
+  background: none;
+  border: none;
+  color: var(--header-text);
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.header nav {
+  display: none; /* Hide nav by default on mobile */
+  width: 100%;
+  background-color: var(--header-bg);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.header nav.mobile-open {
+  display: block; /* Show nav when mobile menu is open */
 }
 
 .header nav ul {
@@ -25,12 +48,12 @@
   margin: 0;
   padding: 0;
   display: flex;
-  flex-wrap: wrap; /* Wrap menu items if needed */
-  justify-content: center;
+  flex-direction: column; /* Stack items in mobile menu */
+  align-items: center;
 }
 
 .header nav li {
-  margin: 5px 10px; /* Jarak antar menu item untuk mobile */
+  margin: 10px 0;
 }
 
 .header nav a {
@@ -38,70 +61,44 @@
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
-  font-size: 0.95em; /* Ukuran font lebih kecil untuk mobile */
+  font-size: 1em;
 }
 
 .header nav a:hover {
   color: var(--link-color);
 }
 
-.theme-toggle-button {
-  background-color: var(--button-bg);
-  color: var(--button-text);
-  border: 1px solid var(--button-bg);
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  margin-left: 20px; /* Jarak dari menu lain */
-}
-
-.theme-toggle-button:hover {
-  background-color: var(--link-color);
-  border-color: var(--link-color);
-}
-
-/* --- Media Queries --- */
-
-/* Untuk layar lebih besar dari 768px (tablet dan desktop) */
+/* Hide hamburger and show full nav on desktop */
 @media (min-width: 768px) {
+  .hamburger-button {
+    display: none;
+  }
+
   .header .container {
-    flex-direction: row; /* Kembali ke horizontal untuk desktop */
     justify-content: space-between;
-    align-items: center;
-    text-align: left;
+    padding: 0 40px;
   }
 
   .header h1 {
-    font-size: 2em; /* Ukuran font standar untuk desktop */
-    margin: 0;
+    font-size: 2em;
+  }
+
+  .header nav {
+    display: flex; /* Show nav on desktop */
+    width: auto;
+    background-color: transparent;
+    padding: 0;
   }
 
   .header nav ul {
-    flex-wrap: nowrap;
+    flex-direction: row;
   }
 
   .header nav li {
-    margin-left: 20px; /* Jarak antar menu item standar */
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0 15px;
   }
 
   .header nav a {
-    font-size: 1em; /* Ukuran font standar untuk desktop */
-  }
-
-  .theme-toggle-button {
-    margin-left: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .theme-toggle-button {
-    margin-left: 0;
-    margin-top: 10px;
-    width: fit-content;
-    padding: 6px 12px;
+    font-size: 1em;
   }
 }

@@ -2,55 +2,51 @@
 
 .about-section {
   text-align: center;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 20px; /* Padding umum */
   background-color: var(--section-bg);
 }
 
 .about-section h2 {
   color: var(--header-text);
-  font-size: 1.8em;
-  margin-bottom: 30px;
+  font-size: 1.5em; /* Ukuran font lebih kecil untuk mobile */
+  margin-bottom: 20px;
 }
 
 .about-section p,
 .about-section .about-paragraph {
-  color: var(--header-text); /* Teks di about section akan putih/terang */
+  color: var(--header-text);
+  font-size: 0.9em; /* Ukuran font lebih kecil untuk mobile */
+  line-height: 1.6;
 }
 
-/* Container untuk teks dan gambar */
 .about-content {
   display: flex;
-  flex-direction: column; /* Default: stack vertikal untuk mobile */
-  gap: 30px;
+  flex-direction: column; /* Stack vertikal default untuk mobile */
+  gap: 20px;
   align-items: center;
   text-align: left;
 }
 
 .about-text-column {
-  flex: 1;
-  max-width: 100%;
+  width: 100%; /* Lebar penuh untuk mobile */
 }
 
 .about-paragraph {
-  max-width: 800px;
+  max-width: 100%; /* Lebar penuh untuk mobile */
   margin: 0 auto;
-  font-size: 1em;
-  line-height: 1.7;
-  color: var(--header-text); /* Pastikan paragraf juga terang */
-  text-align: justify;
+  text-align: left; /* Teks rata kiri di mobile */
 }
 
-/* Styling untuk animasi teks "HI Everyone!!" */
+/* Animasi teks */
 .about-paragraph {
-  display: flex; /* Agar span bisa diatur bersebelahan */
-  flex-wrap: wrap; /* Jika ada baris baru setelah animasi */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .animated-letter {
   opacity: 0;
-  transform: translateX(-20px); /* Mulai sedikit dari kiri */
-  animation: slideIn 0.3s ease-out forwards;
+  transform: translateX(-10px); /* Animasi lebih halus di mobile */
+  animation: slideIn 0.2s ease-out forwards;
 }
 
 @keyframes slideIn {
@@ -61,99 +57,82 @@
 }
 
 .about-image-column {
-  flex: 1;
-  max-width: 100%;
+  width: 100%; /* Lebar penuh untuk mobile */
 }
 
-/* Styling untuk Carousel/Slider */
 .skills-carousel {
-  margin-top: 20px;
-  padding: 0 20px;
-  margin-bottom: 30px;
+  margin-top: 15px;
+  padding: 0 10px;
+  margin-bottom: 20px;
   width: 100%;
 }
 
-.skills-carousel .slick-slide {
-  text-align: center;
-  padding: 10px;
-  box-sizing: border-box;
-  display: flex !important;
-  justify-content: center;
-  align-items: center;
-}
-
 .skills-carousel .slick-slide img {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 100px; /* Ukuran gambar lebih kecil di mobile */
+  max-height: 100px;
   width: auto;
   height: auto;
   border-radius: 8px;
   object-fit: contain;
-  box-shadow: 0 4px 8px var(--card-shadow);
+  box-shadow: 0 2px 4px var(--card-shadow);
 }
 
-/* Gaya untuk panah navigasi */
 .slick-prev:before, .slick-next:before {
-  color: var(--link-color);
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .slick-prev {
-  left: -35px;
+  left: 10px;
 }
 
 .slick-next {
-  right: -35px;
+  right: 10px;
 }
 
-/* Gaya untuk titik-titik navigasi (dots) */
 .slick-dots {
-  bottom: -40px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.slick-dots li {
-  margin: 0 5px;
+  bottom: -30px;
 }
 
 .slick-dots li button:before {
-  font-size: 10px;
-  color: var(--link-color);
-  opacity: 0.75;
+  font-size: 8px;
 }
 
-.slick-dots li.slick-active button:before {
-  color: var(--button-bg);
-  opacity: 1;
-}
-
-/* --- Media Queries --- */
-
-/* Untuk layar lebih besar dari 768px (tablet dan desktop) */
+/* --- Media Queries untuk layar yang lebih besar --- */
 @media (min-width: 768px) {
+  .about-section {
+    padding: 40px;
+  }
+
+  .about-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .about-section p,
+  .about-section .about-paragraph {
+    font-size: 1em;
+    line-height: 1.7;
+  }
+
   .about-content {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 40px;
-  }
-
-  .about-text-column {
-    flex: 1;
-    padding-right: 20px;
+    gap: 30px;
     text-align: left;
   }
 
+  .about-text-column {
+    width: 55%;
+    padding-right: 20px;
+  }
+
   .about-paragraph {
-    font-size: 1.1em;
-    margin-bottom: 0;
+    max-width: none;
   }
 
   .about-image-column {
-    flex: 1;
-    max-width: 40%;
+    width: 40%;
     text-align: center;
   }
 
@@ -161,23 +140,45 @@
     margin-top: 0;
     padding: 0;
     margin-bottom: 0;
-    width: 100%;
+  }
+
+  .skills-carousel .slick-slide img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  .slick-prev {
+    left: -35px;
+  }
+
+  .slick-next {
+    right: -35px;
+  }
+
+  .slick-dots {
+    bottom: -40px;
+  }
+}
+
+/* Untuk layar desktop yang lebih besar */
+@media (min-width: 1200px) {
+  .about-section {
+    padding: 60px;
+  }
+
+  .about-section h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+
+  .about-section p,
+  .about-section .about-paragraph {
+    font-size: 1.1em;
+    line-height: 1.8;
   }
 
   .skills-carousel .slick-slide img {
     max-width: 180px;
     max-height: 180px;
-  }
-
-  .slick-prev {
-    left: -40px;
-  }
-
-  .slick-next {
-    right: -40px;
-  }
-
-  .slick-dots {
-    bottom: -50px;
   }
 }

@@ -4,88 +4,85 @@
 .portofolio-section {
   text-align: center;
   background-color: var(--section-bg); /* Background untuk section */
-  padding-left: 15px; /* Tambahkan padding agar slider tidak menempel tepi */
-  padding-right: 15px; /* Tambahkan padding agar slider tidak menempel tepi */
+  padding: 20px 15px; /* Padding atas-bawah 20px, kiri-kanan 15px untuk mobile */
 }
 
 .portofolio-section h2 {
   color: var(--header-text); /* Warna teks heading */
-  font-size: 1.8em;
+  font-size: 1.5em; /* Ukuran font heading lebih kecil untuk mobile */
+  margin-bottom: 20px;
 }
 
 /* Container untuk slider */
 .portofolio-carousel-container {
-  margin-top: 25px;
-  /* Tambahkan padding horizontal agar panah navigasi tidak terpotong */
-  padding: 0 40px; /* Sesuaikan sesuai kebutuhan, beri ruang untuk panah */
+  margin-top: 20px;
+  padding: 0 10px; /* Padding horizontal lebih kecil untuk mobile */
 }
 
 /* Wrapper untuk setiap slide di dalam slider */
 .portofolio-card-wrapper {
-  padding: 10px; /* Memberi sedikit padding di sekitar card untuk jarak antar slide */
-  box-sizing: border-box; /* Pastikan padding termasuk dalam lebar */
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .portofolio-card {
   background-color: var(--card-background); /* Background card */
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 20px;
+  padding: 15px; /* Padding lebih kecil untuk mobile */
   text-align: left;
   box-shadow: 0 2px 5px var(--card-shadow);
   transition: transform 0.3s ease;
-  
-  /* --- Properti Flexbox yang Penting untuk Tinggi Seragam --- */
-  height: 100%; /* Memastikan card mengambil tinggi penuh dari parent-nya */
-  display: flex; /* Mengaktifkan Flexbox untuk konten di dalam card */
-  flex-direction: column; /* Mengatur item Flex menjadi kolom (vertikal) */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .portofolio-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px); /* Efek hover lebih halus di mobile */
 }
 
 .portofolio-card h3 {
   color: var(--text-color); /* Warna teks di dalam card */
   margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 1.2em;
+  margin-bottom: 8px; /* Margin bawah lebih kecil untuk mobile */
+  font-size: 1.1em; /* Ukuran font judul card lebih kecil untuk mobile */
 }
 
 .portofolio-card p {
-  font-size: 0.9em;
+  font-size: 0.85em; /* Ukuran font deskripsi lebih kecil untuk mobile */
   line-height: 1.4;
-  margin-bottom: 10px;
-  color: var(--text-color); /* Warna teks di dalam card */
-  flex-grow: 1; /* Ini yang paling penting: membuat deskripsi "meregang" */
+  margin-bottom: 8px;
+  color: var(--text-color);
+  flex-grow: 1;
 }
 
 .portofolio-card .technologies {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .portofolio-card .tech-tag {
   display: inline-block;
   background-color: var(--link-color);
   color: var(--button-text);
-  padding: 4px 8px;
+  padding: 3px 6px; /* Padding tag lebih kecil untuk mobile */
   border-radius: 4px;
-  font-size: 0.75em;
-  margin-right: 6px;
-  margin-bottom: 6px;
+  font-size: 0.7em; /* Ukuran font tag lebih kecil untuk mobile */
+  margin-right: 4px;
+  margin-bottom: 4px;
 }
 
 .portofolio-card .portofolio-links {
-  margin-top: auto; /* Ini akan mendorong tautan ke bagian bawah card */
+  margin-top: auto;
 }
 
 .portofolio-card .portofolio-links a {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 8px; /* Margin tautan lebih kecil untuk mobile */
   color: var(--link-color);
   text-decoration: none;
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.8em; /* Ukuran font tautan lebih kecil untuk mobile */
 }
 
 .portofolio-card .portofolio-links a:hover {
@@ -94,67 +91,133 @@
 
 .project-image {
   max-width: 100%;
-  height: auto; /* Memastikan rasio aspek terjaga */
+  height: auto;
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Margin bawah gambar lebih kecil untuk mobile */
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-height: 200px; /* Batasi tinggi gambar proyek */
-  object-fit: cover; /* Pastikan gambar mengisi area tanpa distorsi */
+  max-height: 150px; /* Batasi tinggi gambar proyek di mobile */
+  object-fit: cover;
 }
 
-/* Gaya untuk panah navigasi (dari slick-carousel) */
+/* Gaya untuk panah navigasi (slick-carousel) */
 .slick-prev:before, .slick-next:before {
-  font-size: 30px;
-  color: var(--link-color); /* Menggunakan variabel tema */
+  font-size: 24px; /* Ukuran panah lebih kecil untuk mobile */
+  color: var(--link-color);
   opacity: 0.8;
 }
 
 .slick-prev {
-  left: -25px; /* Sesuaikan posisi panah */
-  z-index: 1; /* Pastikan panah di atas konten */
+  left: 5px; /* Posisi panah lebih ke tepi di mobile */
+  z-index: 1;
 }
 
 .slick-next {
-  right: -25px; /* Sesuaikan posisi panah */
+  right: 5px; /* Posisi panah lebih ke tepi di mobile */
   z-index: 1;
 }
 
 /* Gaya untuk titik-titik navigasi (dots) */
 .slick-dots {
-  bottom: -40px; /* Jarak titik dari bawah slider */
+  bottom: -30px;
   margin: 0;
   padding: 0;
   list-style: none;
+  text-align: center;
 }
 
 .slick-dots li {
-  margin: 0 5px;
+  margin: 0 4px;
 }
 
 .slick-dots li button:before {
-  font-size: 10px;
-  color: var(--link-color); /* Menggunakan variabel tema */
+  font-size: 8px;
+  color: var(--link-color);
   opacity: 0.75;
 }
 
 .slick-dots li.slick-active button:before {
-  color: var(--button-bg); /* Menggunakan variabel tema */
+  color: var(--button-bg);
   opacity: 1;
 }
 
-/* --- Media Queries --- */
-
-/* Untuk layar lebih besar dari 768px (tablet dan desktop) */
+/* --- Media Queries untuk layar yang lebih besar --- */
 @media (min-width: 768px) {
   .portofolio-section {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 40px 20px;
+  }
+
+  .portofolio-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
   }
 
   .portofolio-carousel-container {
-    padding: 0 50px; /* Lebih banyak padding untuk panah di desktop */
+    padding: 0 30px; /* Padding horizontal sedang untuk tablet/desktop kecil */
+  }
+
+  .portofolio-card {
+    padding: 20px;
+  }
+
+  .portofolio-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+
+  .portofolio-card p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+  }
+
+  .portofolio-card .tech-tag {
+    padding: 4px 8px;
+    font-size: 0.75em;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+
+  .portofolio-card .portofolio-links a {
+    font-size: 0.85em;
+    margin-right: 10px;
+  }
+
+  .project-image {
+    max-height: 200px; /* Tinggi gambar sedang */
+    margin-bottom: 15px;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    font-size: 30px;
+  }
+
+  .slick-prev {
+    left: -25px;
+  }
+
+  .slick-next {
+    right: -25px;
+  }
+
+  .slick-dots {
+    bottom: -40px;
+  }
+}
+
+/* Untuk layar desktop yang lebih besar */
+@media (min-width: 1024px) {
+  .portofolio-section {
+    padding: 60px;
+  }
+
+  .portofolio-section h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+  }
+
+  .portofolio-carousel-container {
+    padding: 0 60px; /* Padding horizontal lebih lebar untuk desktop besar */
   }
 
   .portofolio-card {
@@ -169,8 +232,20 @@
     font-size: 0.95em;
   }
 
+  .portofolio-card .tech-tag {
+    font-size: 0.8em;
+    padding: 5px 10px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+
+  .portofolio-card .portofolio-links a {
+    font-size: 0.9em;
+    margin-right: 15px;
+  }
+
   .project-image {
-    max-height: 250px; /* Tinggi gambar lebih besar di desktop */
+    max-height: 250px; /* Tinggi gambar lebih besar di desktop besar */
   }
 
   .slick-prev {
@@ -179,24 +254,5 @@
 
   .slick-next {
     right: -35px;
-  }
-}
-
-/* Untuk layar lebih besar dari 1024px (desktop) */
-@media (min-width: 1024px) {
-  .portofolio-carousel-container {
-    padding: 0 60px; /* Padding lebih lebar lagi */
-  }
-  .portofolio-card {
-    padding: 30px;
-  }
-  .portofolio-card h3 {
-    font-size: 1.5em;
-  }
-  .portofolio-card p {
-    font-size: 1em;
-  }
-  .project-image {
-    max-height: 280px; /* Tinggi gambar di desktop besar */
   }
 }

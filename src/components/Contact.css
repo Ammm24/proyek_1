@@ -2,46 +2,50 @@
 .contact-section {
   text-align: center;
   background-color: var(--section-bg); /* Background untuk section */
+  padding: 20px;
 }
 
 .contact-section h2 {
   color: var(--header-text); /* Warna teks heading */
-  font-size: 1.8em;
+  font-size: 1.5em; /* Lebih kecil untuk mobile */
+  margin-bottom: 15px;
 }
 
 .contact-section p {
   color: var(--header-text); /* Warna teks paragraf */
+  font-size: 0.9em; /* Lebih kecil untuk mobile */
+  margin-bottom: 20px;
 }
 
 .contact-form {
   max-width: 90%;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 15px auto;
+  padding: 15px;
   background-color: var(--card-background); /* Background form */
   border-radius: 8px;
   box-shadow: 0 2px 5px var(--card-shadow);
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
   font-weight: bold;
   color: var(--text-color); /* Warna label */
-  font-size: 0.95em;
+  font-size: 0.9em;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
   border: 1px solid var(--border-color);
   border-radius: 5px;
-  font-size: 0.9em;
+  font-size: 0.85em;
   box-sizing: border-box;
   background-color: var(--input-bg); /* Background input */
   color: var(--text-color); /* Warna teks input */
@@ -54,10 +58,10 @@
 .submit-button {
   background-color: var(--button-bg);
   color: var(--button-text);
-  padding: 10px 20px;
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
-  font-size: 1em;
+  font-size: 0.9em;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -67,61 +71,110 @@
 }
 
 .social-links {
-  margin-top: 30px;
+  margin-top: 20px;
+  text-align: center; /* Center align di mobile */
 }
 
 .social-links p {
-  margin-bottom: 10px;
-  font-size: 1em;
+  margin-bottom: 8px;
+  font-size: 0.9em;
   color: var(--header-text); /* Warna teks di social links */
 }
 
 .social-links a {
-  display: block;
-  margin: 10px 0;
+  display: block; /* Tumpuk ke bawah di mobile */
+  margin: 8px 0;
   color: var(--header-text); /* Warna link sosial */
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .social-links a:hover {
   color: var(--link-color);
 }
 
-.social-links a.whatsapp-link {
-  background-color: #25D366; /* Warna hijau WhatsApp */
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 15px;
-  display: inline-block;
-}
-
-.social-links a.whatsapp-link:hover {
-  background-color: #1DA851;
-}
-
 /* --- Media Queries --- */
 
 /* Untuk layar lebih besar dari 768px (tablet dan desktop) */
 @media (min-width: 768px) {
+  .contact-section {
+    padding: 40px;
+  }
+
   .contact-section h2 {
     font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .contact-section p {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+
+  .contact-form {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+  }
+
+  .form-group label {
+    margin-bottom: 5px;
+    font-size: 1em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 0.95em;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+  .social-links {
+    margin-top: 30px;
+    text-align: left; /* Align kiri di desktop */
+    display: flex; /* Atur link menjadi sejajar */
+    align-items: center; /* Vertikal tengah */
+    justify-content: center; /* Atur jarak antar link */
+  }
+
+  .social-links p {
+    margin-bottom: 0;
+    margin-right: 20px;
+    font-size: 1em;
+  }
+
+  .social-links a {
+    display: inline-block; /* Sejajar */
+    margin: 0 10px;
+    font-size: 1em;
+  }
+}
+
+/* Untuk layar desktop yang lebih besar */
+@media (min-width: 1200px) {
+  .contact-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 25px;
+  }
+
+  .contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 35px;
   }
 
   .contact-form {
     max-width: 600px;
-    margin: 30px auto;
     padding: 30px;
   }
 
   .form-group label {
-    margin-bottom: 8px;
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   .form-group input,
@@ -136,21 +189,14 @@
   }
 
   .social-links {
-    margin-top: 40px;
+    justify-content: flex-start; /* Rata kiri dengan jarak di desktop besar */
   }
 
   .social-links p {
-    margin-bottom: 15px;
-    font-size: 1.1em;
+    margin-right: 30px;
   }
 
   .social-links a {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 1em;
-  }
-  .social-links a.whatsapp-link {
-    padding: 10px 20px;
-    margin: 0 10px;
+    margin: 0 15px;
   }
 }

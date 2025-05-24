@@ -15,15 +15,15 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Dapatkan data dari state
-    const { name, email, message } = formData;
-    
-    // Encode data untuk URL
-    const subject = encodeURIComponent(`Pesan dari Portofolio Anda (${name})`);
-    const body = encodeURIComponent(`Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`);
-    
+    // Dapatkan data pesan dari state
+    const { message } = formData;
+
+    // Encode data untuk URL (hanya pesan)
+    const subject = encodeURIComponent('Pesan dari Portofolio Anda'); // Subjek bisa disesuaikan
+    const body = encodeURIComponent(`Pesan:\n${message}`);
+
     // Alamat email tujuan Anda
-    const recipientEmail = 'muh.iam2404@gmail.com'; 
+    const recipientEmail = 'muh.iam2404@gmail.com';
 
     // Buat URL mailto
     const mailtoLink = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
@@ -31,10 +31,10 @@ function Contact() {
     // Buka aplikasi email default
     window.location.href = mailtoLink;
 
-    // Opsional: berikan feedback ke pengguna setelah membuka email client
-    alert('Formulir akan membuka aplikasi email, Harap klik Kirim untuk mengirim pesan.');
-    
-    // Kosongkan formulir
+    // Opsional: berikan feedback ke pengguna
+    alert('Formulir akan membuka aplikasi email dengan pesan Anda.');
+
+    // Kosongkan formulir (opsional)
     setFormData({ name: '', email: '', message: '' });
   };
 
